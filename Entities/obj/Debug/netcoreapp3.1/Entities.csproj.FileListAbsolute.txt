@@ -1,0 +1,8 @@
+C:\Users\didie\Source\Repos\Inventory\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+C:\Users\didie\Source\Repos\Inventory\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\didie\Source\Repos\Inventory\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\didie\Source\Repos\Inventory\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
+C:\Users\didie\Source\Repos\Inventory\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+C:\Users\didie\Source\Repos\Inventory\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+C:\Users\didie\Source\Repos\Inventory\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+C:\Users\didie\Source\Repos\Inventory\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
