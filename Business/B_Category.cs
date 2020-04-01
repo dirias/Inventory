@@ -9,14 +9,14 @@ namespace Business
 {
     public class B_Category
     {
-        public List<CategoryEntity> CategoryList()
+        public static List<CategoryEntity> CategoryList()
         {
             using (var db = new InventaryContext())
             {
                 return db.Categories.ToList();
             }
         }
-        public void CreateCategory(CategoryEntity oCategory)
+        public static void CreateCategory(CategoryEntity oCategory)
         {
             using (var db = new InventaryContext())
             {
@@ -24,7 +24,14 @@ namespace Business
                 db.SaveChanges();
             }
         }
-        public void UpdateCategory(CategoryEntity oCategory)
+        public static CategoryEntity CategoryById(string id)
+        {
+            using (var db = new InventaryContext())
+            {
+                return db.Categories.ToList().LastOrDefault(x => x.CategoryId == id);
+            }
+        }
+        public static void UpdateCategory(CategoryEntity oCategory)
         {
             using (var db = new InventaryContext()) 
             {

@@ -1,0 +1,62 @@
+﻿@using Entities
+@using Business
+
+<EditForm Model="oStorage">
+    <div class="form-group">
+        <label>Bodega:</label>
+        <InputSelect @bind-Value="oStorage.WarehouseId" class="form-control" @onclick="reset">
+            <option value="">Seleccione una bodega..</option>
+            @foreach (var warehouse in warehouses)
+            {
+        <option value="@warehouse.WarehouseId">@warehouse.WarehouseName</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="form-group">
+        <label>Product:</label>
+        <InputSelect @bind-Value="oStorage.ProductId" class="form-control" @onclick="reset">
+            <option value="">Seleccione un producto..</option>
+            @foreach (var product in products)
+            {
+                <option value="@product.ProductId">@product.ProductName</option>
+            }
+        </InputSelect>
+    </div>
+    <input type="button" name="btnCreate" value="Registrar Producto" @onclick="SaveStorage" class="btn btn-success" />
+</EditForm>
+<div class="text-center h4" >
+    @msg
+</div>
+
+@code {
+    StorageEntity oStorage = new StorageEntity();
+    List<WarehouseEntity> warehouses = new List<WarehouseEntity>();
+    List<ProductEntity> products = new List<ProductEntity>();
+    string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        warehouses = B_Warehouse.WarehouseList();
+        products = P_Product.ProductList();
+    }
+    private void SaveStorage()
+    {
+        oStorage.StorageId = $"{oStorage.WarehouseId}-{oStorage.ProductId}";
+        if (!B_Storage.IsProductInWarehouse(oStorage.StorageId))
+        {
+
+            oStorage.LastUpdate = DateTime.Now;
+            B_Storage.CreateStorage(oStorage);
+            msg = "Producto registrado";
+        }
+        else
+        {
+            msg = $"Ya existe un producto con el ID: {oStorage.ProductId}";
+        }
+    }
+    private void reset()
+    {
+        msg = "";
+    }
+
+}

@@ -90,6 +90,41 @@ using Inventory.Components.Tasks.Forms;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\didie\Source\Repos\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Products;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\didie\Source\Repos\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Categories;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\Users\didie\Source\Repos\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Warehouse;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "C:\Users\didie\Source\Repos\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Storage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\Users\didie\Source\Repos\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.InOuts;
+
+#line default
+#line hidden
+#nullable disable
     public partial class Form002 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

@@ -1,0 +1,37 @@
+﻿@using Entities
+@using Business
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var category in TempCategories)
+        {
+            <tr>
+                <td>
+                    @category.CategoryId
+                </td>
+                <td>
+                    @category.CategoryName
+                </td>
+                <td><a href="category/update/@category.CategoryId">Editar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    List<CategoryEntity> Categories = new List<CategoryEntity>();
+    List<CategoryEntity> TempCategories = new List<CategoryEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        TempCategories = B_Category.CategoryList();
+    }
+
+}
